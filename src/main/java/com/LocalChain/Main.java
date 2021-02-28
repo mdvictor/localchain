@@ -25,8 +25,8 @@ public class Main {
             while (answer != null) {
                 System.out.println("CHAIN:");
                 Network.printLatestChain();
-                System.out.println("USER COUNT:");
-                System.out.println(Network.getUserCount());
+                System.out.println("MINER COUNT:");
+                System.out.println(Network.getMinerCount());
                 System.out.println("\n\n");
 
                 System.out.println("\n\nPrint the current longest chain? (just press whatever, doesn't matter)");

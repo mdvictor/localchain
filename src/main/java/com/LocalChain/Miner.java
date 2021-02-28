@@ -14,7 +14,7 @@ public class Miner extends User{
         localChain = Network.getLatestChainFromFakeNetwork();
         pickaxe = new MineUtils();
 
-        Network.raiseUserCount();
+        Network.raiseMinerCount();
     }
 
     public void startMining() {

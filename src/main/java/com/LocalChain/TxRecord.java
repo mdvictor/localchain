@@ -83,7 +83,7 @@ public class TxRecord {
         for(TxInput i : inputs) {
             if(i.UTXO == null) continue; //if Transaction can't be found skip it
             if (!Network.removeTxOutput(i.UTXO.id)) {
-                System.out.println("OH NO! It didn't delete the spent input with id: " + i.UTXO.id);
+//                System.out.println("OH NO! It didn't delete the spent input with id: " + i.UTXO.id);
             }
         }
 

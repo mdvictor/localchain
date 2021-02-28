@@ -194,12 +194,12 @@ public class Network {
     }
 
     public static void adaptDifficulty() {
-        if (getUserCount() > 2) {
-            difficulty = MIN_DIFFICULTY + getUserCount() / 2;
+        if (getMinerCount() > 2) {
+            difficulty = MIN_DIFFICULTY + getMinerCount() / 2;
         }
     }
 
-    public static int getUserCount() {
+    public static int getMinerCount() {
         Connection connection = getConnection();
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery("SELECT usersNo from user_count WHERE id = 1");
@@ -215,7 +215,7 @@ public class Network {
         }
     }
 
-    public static boolean raiseUserCount() {
+    public static boolean raiseMinerCount() {
         Connection connection = getConnection();
         try (Statement stmt = connection.createStatement()) {
             stmt.execute("UPDATE user_count SET usersNo = (SELECT usersNo FROM user_count WHERE id = 1) + 1 WHERE id = 1;");
